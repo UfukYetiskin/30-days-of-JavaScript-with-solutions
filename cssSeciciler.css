@@ -1,0 +1,392 @@
+/*
+ Evrensel seçici 
+*{
+ background-color: purple;
+}
+
+ Body etiketini seçer. Çocuklarını ve torunlarının hepsini kapsar 
+body{
+    background-color: purple;
+}
+
+ h3 etiketlerinin hepsini kapsar 
+h3{
+    color: brown;
+    background-color: bisque;
+}
+
+ id'si test olan etiketi etkiler 
+#test{
+    color: blueviolet;
+}
+
+ div-2 class'a sahip olan bütün etiketleri etkiler 
+.div-2{
+    color: black;
+}
+
+ div etiketleri içerisinde class'ı div-2 olan etikei seçer
+div.div-2{
+    color: aquamarine;
+}
+
+ class'ı hem div-2 olan hem de ikinci-div olan etiketi etkiler 
+.div-2.ikinci-div{
+    background-color: azure;
+}
+
+/* p etiketi içerisinde class'ı div-2 ve ikinci-div olan p etiketi   etkilenir 
+p.div-2.ikinci-div{
+    background-color: red;
+}
+
+/*  (!important) ile öncelikli seçicilerden haricinde birini etkilemek istersek kullanırız. Bu şekilde id ve class seçicisinden daha önemli oldugu vurgulanır. */
+/* , (virgül) işareti CSS seçicilerde ve anlamına gelir. p, div dediğimizde p ve div etiketini etkiler */
+
+
+/* p etiketi içerisindeki div'i seç deriz. Bu şekilde p etiketinin torunlarını da seçmiş oluruz. 
+p div {
+    color: white;
+}
+
+/* sadece çocuk etiketimizi seçmek istersek ul > li seçicisini kullanırız.  
+
+ul > li{
+    background-color: lime;
+}
+
+
+/* p etiketinden sonra gelen h3 etiketi seçilir 
+p + h3{
+    color: red;
+}
+
+/* div etiketinde prototurk sınıfına sahip divi seçer ve onun öncesine istenilen özellikler verilir 
+div.prototurk::before{
+    content: "öncesi";
+    color: burlywood;
+    background-color: yellow;
+}
+/* :: sözde elemanları seçerken kullanılır. After ve before seçicileri için kullanılır. Content özelliği sadece before ve afterda kullanılır.
+div.prototurk::after {
+    content: attr(data-sonrasi);
+    color: burlywood;
+    background-color: yellow;
+}
+
+/* Seçilen ögeler üzerinde işlem yapar  
+::selection{
+    background-color: orange;
+}
+/* Sparagraflarda seçilen ögeleri etkilr  
+p::selection{
+    background-color: orange;
+}
+
+input::placeholder{
+    color: red;
+}
+
+/* : sözde sınıftır. ul listesinin ilk cocugu seçilir   
+ul li:first-child{
+    background-color: purple;
+}
+/* ul listesinin son cocugu seçilir   
+ul li:last-child{
+    background-color:white;
+}
+
+/* nth-chil ile n'inci çocugu etkileriz   
+ul li:nth-child(3){
+    background-color: brown;
+}
+/* 2n yaparsak 2'şer artarak gider ve her 2nin katı olan cocugu etkiler   
+ul li:nth-child(2n){
+    background-color: brown;
+}
+
+
+/* a etiketinin üstüne geldiğimizde ne yapacağını söyleriz 
+a:hover{
+    color: black;
+}
+
+/* inputlarda niteliği  type="checkbox" olup ondan sonra gelen divi seçer  
+input[type="checkbox"]:checked + div {
+    display: none;
+}
+
+/* display ile inline olan özelliği block ya da inline blockyaoabiliriz. Span'a bu özellikler verilmez ise padding gibi margin gibi özellikleri veremeyiz  
+span{
+
+    display: inline-block;
+    background-color: white;
+    padding: 2px;
+
+}
+
+
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: lime;
+    padding: 50px; /* padding verdiğimiz için artık divin boyutu 400'e 400 olacaktır.
+    box-sizing: border-box;  /* padding verince artan boyut border-box ile artık boyutunu koruyacak ve 300'e 300 olacak 
+    border-radius: 10px; /* 50% yapınca tam yuvarlak elde ederiz kare kutularda 
+}
+.box2{
+    background-color: orange;
+    margin: 15px;
+    padding: 5px;
+    border: 2px solid black;
+    border-left: none;
+    border-right-color: red ;
+    border-bottom-style: dotted;
+}
+
+h3{
+    color: blue;
+    font-family: Arial, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 10px 10px 0 black; /* text-shadow ile metne gölge verilebilir. 2px 2px dersek gölge gibi duru. -2 -2 yazarsak tersi yönde gölge çıkarır. 
+}
+
+p{
+    line-height: 20px;
+    font: bold italic 20px/30px Arial ;
+    text-align: center;
+
+}
+
+.bg{
+    width: 100%;
+    height: 400px;
+    background-color: lime;
+    background-image: url(https://i.ytimg.com/vi/5qap5aO4i9A/hq720_live.jpg?sqp=CLzkiJAG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAEDutmAknKD9mRaPxV0mXVuGpMrg);
+    background-size: cover; /* cover ile resmi tam oturtmaya çalışır. Contain derse resmin boyutunu bozmadan tam oturtmaya çalışır ve tekrar ettirebilir. background-repeat ile tekrarlanmasın üzrine işlem yapılabilir. 
+    background-position:center ;
+
+}
+
+.kutu{
+    width: 500px;
+    height: 500px;
+    background-color: orange;
+    margin-top: 30px;
+    position: relative; /* positio: absolute verildiğinde bir etikete ebeveyn elementi var ise ona göre hareket edecektir. Eğer ata ebeveyni yoksa HTML'e göre hareket edecektir. Ata element vermek istersen position: relative kullanılır. 
+}
+
+/* üst üste olan iki elementin hangisinin üstte olacağını ya da altta olacağını z-index ile belirleriz 
+/* positoin: fixed; arayüze sabit olarak sayfa aşağı kaydıkça o da kayar. 
+
+.kutu span{ /* span etiketinin atası kutu sınıfıdır. Bu yüzden position'u ata etiketinin sınırlarına göre verilir. 
+    position: absolute; /* Ata elementine göre hareket etmesini istersek bunu kullanırız. absolute dediğimiz anda span etiketi inline-block element olur 
+    bottom: 50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: olive;
+}
+
+/* a etiketinde linklerin alt çizgsini kaldırır 
+a{
+    text-decoration: none;
+}
+
+*/
+
+
+/* Nitelik Seçici */
+/* abbr etiketinde niteliği title olan etiketi seçecektir. */
+abbr[title]{
+    color: blue;
+}
+
+
+/* Niteliğin Değerine Göre Seçici */
+/* a etiketinde niteliği target="_blank" olan etiketi seçecektir. sadece target deseydik atanan özelliğe bakmadan target niteliği olan bütün etiketleri alacaktır.  */
+/*
+a[target="_blank"]{
+    color: orange;
+}*/
+/* 
+<div class="box-small">
+<div class="boxcontent">*/
+
+
+/*  Nitelik değeri belirlediğimiz kelime ile başlayan etiketleri seçer. class'ı box ile başlayan etiketleri seçecektir.
+div[class|="box"]{
+    background : yellow;  //sadece box-small sınıfı olan div'i seçecektir.
+}
+*/
+
+/*  Belirlediğimiz kelime ile başlayan tüm nitelik değerlerine sahip olan etiketleri seçer. eğer class sınıfında box kelimesi mevcut ise boxcontent'i de alır.
+div[class^="box"]{
+    background : yellow; //her iki div'i de seçecektir
+}
+*/
+
+/* 
+<div class="big-box">
+<div class="bigbox">*/
+
+/*  Class niteliği box ile biten bütün etiketleri seç
+div[class $="box"]{
+    background : yellow; //her iki div'i de seçecektir
+}
+*/
+
+/* 
+<div class="bigtitlebox">
+<div class="big-title">
+<div class="big_box_title">*/
+
+/*  Class niteliğinde title geçen herhangi bir div etiketimi seç.
+div[class *="title"]{
+    background : yellow; //bütün title niteliği geçen etiketleri seçecektir
+}
+*/
+
+/*  Nitelik seçerken CSS büyük harf küçük harf duyarlılığı yapar. Bunu çözmek için i flagı ile çözeriz
+div[class *="title" i]{
+    background : yellow; 
+}
+*/
+
+
+/*                  Sözde Öğeler                    */
+/*Sözde öğe olup olmadığını anlamak için, eğer 2 iki nokta üst üste görüyorsak bu sözde öğedir. */
+
+
+/* before ve after sözde ögelerini kullanırken mutlaka content özelliği kullanılmalı.*/
+/* 
+div::after{
+    content: 'sonraki yazı'; //div etikietinin içeriğinden hemen sonra div etiketi block olmasına ragmen bu yazı gözükecektir
+*/
+
+/* 
+div::before{
+    content: 'önceki yazı'; //div etikietinin içeriğinden hemen önce div etiketi block olmasına ragmen bu yazı gözükecektir
+*/
+
+
+/* attr() Fonksiyonu, before ve afterdaki content değerlerini almak istersek bu fonk ile alırız.
+//box sınıfına sahip etiketi seçer ve o etiketin içeriğinin sonuna bu sınıfa ait title' niteliğini ekleriz.
+
+
+data, html'den bilgi göndermek için kullanırız.
+
+data-oncesi="öncesi", niteliktir.
+
+
+.box::after{
+    content: attr(title);
+    color: red;
+    background: blue; 
+}
+.box::after{
+    content: attr(data-oncesi);
+    color: red;
+    background: blue; 
+}
+*/
+/* 
+first-letter, ilk harfi seçen sözde öğedir.
+
+p::first-letter{
+    color: red;
+    font-size:36px;
+}
+
+
+first-line, ilk satırı seçmek için kullanılır.
+
+p::first-line{
+    background: pink;
+}
+
+p::selection { /* wep sayfasında seçilen alanları etkiler 
+    background-color: yellow;
+}
+input::placeholder, textarea::placeholder{
+    color: blueviolet;
+}
+
+/*                  SÖZDE SINIFLAR                  
+/*  ilk çocucugu seçeriz
+ul li:first-child{
+    color: brown;
+}
+
+/*  son çocucugu seçeriz
+ul li:last-child{
+    color: brown;
+}
+
+body > ul li:last-child{
+    background-color: greenyellow;
+}
+
+/* tipe göre ilk tagı seçmemizi sağlıyor. Ebevyn etkisinden dolayı first-chil ya da last child seçiciclerini kullanırken eğer onlardan önce bir etiket kullanıldıysa seçici hata verir. Bu hatayı almamak için first type of seçicisini kullanırız.
+
+ul:first-of-type{
+    background-color: lime;
+}
+p:first-of-type{
+    background-color: lime;
+}
+/*  son çocucugu seçerken yaşadığımız sıkıntıyı çözmek için bunu kullanırız.
+
+ul:last-of-type{
+    color: red;
+}
+
+
+                :NTH-CHILD
+
+ul li:nth-child(4){
+    color: bisque;
+}
+
+ul li:nth-child(odd){
+    background-color: lime;
+}
+
+ul li:nth-child(evem){
+    background-color: yellow;
+}
+
+ul li:nth-child(3n){
+    font-size: 30px;
+}
+ul li:nth-child(3n+1){
+    font-size: 10px;
+}
+
+ul li:nth-child(n+4){
+    font-weight: bold;
+}
+
+ul li:nth-child(-n+7){
+    background-color: peru;
+}
+ul li:nth-child(n+4):nth-child(even):nth-child(-n+8){
+    background-color: purple;
+}
+
+div:nth-of-type(odd){
+    background-color: aqua;
+}
+ul li:nth-last-child(3){
+    background-color: aquamarine;
+}
+
+ul:nth-last-of-type(1){
+    background-color: blue;
+}*/
+
+
+

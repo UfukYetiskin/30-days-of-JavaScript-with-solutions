@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- iframe ile istediğimiz sayfayı kendi sayfamızda gösterebiliriz. -->
+    <!-- sandbox niteliğini kullanırsak herhangi bir etkileşim olmayacaktır websitesinde. allow niteliği ile de istenilen etkileşimler aktif edilebilir.-->
+    <iframe src="http://www.erbilen.net/" frameborder="0" style="width: 500px; height: 500px;"></iframe>
+    
+    
+    
+    
+    <!-- TAblo etiketi. -->
+    <table style="border: 1px solid black;">
+        <caption> Form Dersi Tablosu</caption>
+        <thead >
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Şehir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ufuk</td>
+                <td>Yetişkin</td>
+                <td>Diyarbakır</td>
+            </tr>
+            <tr>
+                <td>Ümmühan</td>
+                <td>Gümüş Yetişkin</td>
+                <td>Muğla</td>
+            </tr>
+            <tr>
+                <td>Deniz</td>
+                <td>Yetişkin Gümüş</td>
+                <td>Paris</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    
+    
+    
+    <!-- Liste etiketi. -->
+    <ul >
+        <li>Sabah Erken Kalk</li>
+        <li>Su iç
+            <ul><li>
+                Bir bardak iç
+            </li></ul>
+        </li>
+        <li>Pc aç</li>
+        <li>ders çalış</li>
+    </ul>
+    <ol>
+        <li>Sabah Erken Kalk</li>
+        <li>Su iç</li>
+        <li>Pc aç
+            <ul>
+                <li>VS CODE aç</li>
+                <li>JS Dene</li>
+            </ul>
+        <li>ders çalış</li>
+    </ol>
+    <dl>
+        <dt>Coffee</dt>
+        <dd>- black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+      </dl>
+
+
+    <!-- audio etiketi -->
+    <audio controls>
+        <source src="horse.ogg" type="audio/ogg">
+        <source src="horse.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+
+    <!-- media etiketi -->
+    <!--<video>	Defines a video or movie
+        <source>	Defines multiple media resources for media elements, such as <video> and <audio>
+        <track>	Defines text tracks in media players -->
+    <video width="320" height="240" autoplay muted>
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- FORM OLUŞTURALIM 
+    action niteliği ile form bilgileri nereye gönderileceği belilenir
+    method niteliği, post ya da get olarak mı gönderileceği belirlenir
+    name niteliği olmak zorunda bütün inputlarda, yoksa hiçbir girdi alınamaz gönderildiğinde
+    formun içinde olmayan inputları formla beraber göndermek için form="id" niteliğini kullanırız inputlarda
+    -->
+
+    <form action="" method="" id="form1">
+
+        <!-- Kullanıcıdan adını isteriz. required niteliği ile alanın doldurulması zorunlu olur  -->
+        <fieldset>
+            <legend>Giriş Yap</legend>
+            
+            <label for="kID" > Adınız</label> <!--id'si kID olan input'un labelıdır-->
+            <input id="kID"  type="text" value="Adınızı Giriniz" required> <!--girdi olarak metin girilmesi için kullanılır--><br>
+        
+
+
+            <label for="mail">Mail Adresinizi Giriniz</label>
+            <input placeholder="Mail Adresiniz" id="mail" value="Mail Adresinizi Giriniz" type="email"><br>
+            <!--  Şifre isteyebiliriz. Aynı şekilde mail ve no typeları ile kullanıcıdan bu bilgiler alınabilir-->
+
+            <label for="password1" >Şifre</label>
+            <input id="password1" type="password" value="Şifrenizi Giriniz"> <!--şifre girilecekse kullanılır--><br>
+        
+
+            <label for="tarih">Doğum Tarihiniz</label> 
+            <input  id="tarih" type="date"> <br>
+        </fieldset>
+        
+        <!-- Dosya yüklenmesi için bu eklenebilir  -->
+        <label for="yerelSaat">Yerel Saatinizi Seçin</label>
+        <input id="yerelSaat" type="datetime-local"><br>
+
+        <input type="file" multiple accept="image/*"> <!--Dosya seçmek için kullanılır accept niteliği ile istenilen uzantıda dosyalar seçilir multipl niteliği ile birden fazla dosya seçilebilir.--><br>
+        
+        <!-- checked  niteliği ile seçili olarak gelir -->
+
+        <label for="">
+            <input type="checkbox" checked > Kullanıcı Metnini Kabul ediyorum <!-- işaretleme için kullanılır--><br>
+        </label>
+        <label for="">
+            <input type="checkbox"> Aydınlatma Metnini Kabul ediyorum <!-- işaretleme için kullanılır--><br>
+        </label>
+        
+        <!--  -->
+
+        <label for="">
+            <input type="radio" name="cinsiyet" value="kadin" >Kadın
+        </label>
+        
+        <!--  -->
+
+        <label for="">
+            <input type="radio" name="cinsiyet" value="erkek"  >Erkek
+        </label><br>
+        
+        <!--  -->
+
+        <input type="hidden" name="test" value="test"> <!--Kullanıcının göremeyeceği bir type sahiptir. fakat inceleme yaparken kullanıcı görebilir bu yüzden buraya önemli bilgi girilmez-->
+        
+        <!--  -->
+
+        <input type="submit" name="" id="">
+
+        <!-- reset tipi ile dolu olan inputları temizler -->
+
+        <input type="reset" name="" id="">
+        
+    </form>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <input type="color" form="form1"><br>
+    <input type="month"><br>
+    <input type="weak" name="" id=""> <br>
+    <input type="number" min="1" max="11"><br>
+    <input type="range" min="1" max="99" step="1"> <br>
+    <input type="search"> <br>
+    <input type="tel"><br>
+    <input type="time"><br>
+    <input type="url"><br>
+    <input type="text" autocomplete="off"> <!-- autocomplete niteliği ile otomatik doldurma açılır kapanır -->
+    <input list="diller"> <br>
+
+    <datalist id="diller">
+        <option value="HTML">
+        <option value="CSS">
+        <option value="JS">
+    </datalist> <br>
+
+    <select name="dil" required id="">  <!-- multiple niteliği kullanıldığında name="dil[]" olarak yazılmalı mutlaka -->
+        <option value="eng">İngilzice</option>
+        <option selected value="tr">Türkçe</option>
+        <option value="de">Almanca</option>
+    </select> <br>
+
+    <textarea name="" id="" cols="30" rows="10"></textarea><br> 
+
+    
+
+
+</body>
+</html>

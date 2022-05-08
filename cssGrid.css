@@ -1,0 +1,76 @@
+/*
+display:grid; sayfanın yapısının ızgara olacagını belirtiriz. inline-grid ile sadece elementin kapsadığı alan kadar bir parça oluşturmuş oluruz
+grid-template-columns: 20% 20%; ile ızgara sistemini 2 sutünlu olmasını ve boyutlarının 20% lik olmasını belirtiriz.
+grid-template-rows: 100px; ile ızgara yapısının 1 satırlık olmasını ve 100 px yüksekliğinde olmasını isteriz
+grid-gap:30px; ızgara yapısındaki parçaların birbirine olan uzaklığını belirleriz margin gibi 
+
+row-gap, elemanların satırlar arası boşluğunu belirler
+column-gap, elemanların sutünlar arası boşluğunu belirler
+gap: 50px 100px; satırlar arası boşluğun 50px , sutünlar arası boşluğun 100px olmasını ister
+fr birimi, bu boşlukları yerleşim alanından hariç tutarak kullanılabilir alanın hesabını otomatik olarak yapıp, ızgara öğelerinin yerleşimini sağlar
+
+grid-column-star:1 ile istenilen sınıfa ait elemanın nereden başlayacağını,
+grid-column-end:3 ile istenilen sınıfa ailt elemanın nerede biteceğini belirtiz
+grid-column: 1 / 5; ile 8 sutüna ayrılmış bir ızgarada istenilen elemanın 1. sutündan 5. sutüna kadar kaplanması sağlanır
+grid-column: 1 / span 3; etkilenen eleman 3  sutün kaplar
+grid-row: 1 / 4; biçimlenmesi istenen sınıf ya da id'ye esahip elemanın bununduğu sutundaki 4. satıra kadar satırların birleşmesini sağlar
+grid-row: 1 / span 2;
+grid-area: 1 / 2 / 5 / 6; grid-row-start / grid-column-start / grid-row-end / grid-column-end. Item8 will start on row-line 1 and column-line 2, and end on row-line 5 column-line 6:
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+
+
+  minmax() fonksiyonu, ızgara izleri için belirli bir boyut aralığı değeri tanımlamamızı sağlar. İlk değer minimum, ikinci değer ise maksimum değeri belirtir.
+
+.grid-container {
+  display: grid;
+  grid-template-columns: minmax(200px, 500px) 1fr;
+}
+}
+
+
+
+
+
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+    grid-gap: 20px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+.grid-item-1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

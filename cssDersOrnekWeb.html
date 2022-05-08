@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CSS Öğreniyorum</title>
+</head>
+<body>
+<!--
+    <div id="test">
+        div etiketi
+    </div>
+
+    <div class="div-2 ikinci-div">
+        div etiketi
+    </div>
+
+    <p>
+        <div id="test">
+            div etiketi
+        </div>
+    
+        <div class="div-2 ikinci-div">
+            div etiketi
+        </div>
+    </p>
+    <p class="div-2 ikinci-div">Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <ul>
+        <li>Ümmühan</li>
+        <li>Ufuk</li>
+        <li>Deniz
+            <ul>
+                <li>Ufuk</li>
+                <li>Ümmühan</li>
+            </ul>
+        </li>
+        <li>Artemis</li>
+    </ul>
+
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, repellendus!</p>
+        <h3>Lorem, ipsum dolor.</h3>
+        <div>Lorem, ipsum.</div>
+        <h3>Lorem, ipsum dolor.</h3>
+    </div>
+
+    <div class="prototurk" data-sonrasi="bu sonrasi seçicisi">prototurk</div>
+
+    <input type="text" placeholder="Adınızı girin">
+    
+
+
+    <ul>
+        <li>Liste</li>
+        <li>Liste</li>
+        <li>Liste</li>
+        <li>Liste</li>
+        <li>Liste</li>
+        <li>Liste</li>
+        <li>Liste</li>
+    </ul>
+
+    <a href="#">prototurk.com</a> <br> <br>
+
+    <input type="checkbox">
+    <div>div etiketi</div>
+
+    <br>
+    <br>
+
+    <div>block seviyesinden bir eleman</div>
+    <span>inline seviyesinde bir eleman</span>
+
+-->
+<!--
+    <div class="box">
+        div etiketi
+    </div>
+    <div class="box2">div etiketi 2</div> 
+    <h3>bailık etiketi</h3>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis sint error doloribus doloremque ad suscipit, assumenda aliquam qui ullam pariatur, quo numquam quos reiciendis odio rem aliquid? Velit, minus blanditiis?</p>
+    <div class="bg">
+        Lorem, ipsum dolor.
+    </div>
+
+
+    <div class="kutu">
+        <span>span</span>
+        <p>
+            Lorem ipsum dolor sit amet.
+        </p>
+    </div>
+    <a href="#"> link at</a>
+
+-->
+                      <!--Flex, esnek bir yapı kurmak için kullandığımız bir Yapı -->
+
+    <div class="header">
+        <a  class="logo" href="#">Gümüş Zeytin</a>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#">Ana Sayfa</a>
+                </li>
+                <li>
+                    <a href="#">Ürünlerimiz</a>
+                </li>
+                <li>
+                    <a href="#">Hakkımızda</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="login">
+            <a href="#"> Giriş Yap</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sözde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+            <h6>CSS Dersleri</h6>
+            <ul>
+                <li>
+                    <a href="#">Başlangıç</a>
+                </li>
+                <li>
+                    <a href="#">Yapısı ve Seçiciler</a>
+                </li>
+                <li>
+                    <a href="#">Kullanımı</a>
+                </li>
+                <li>
+                    <a href="#">Nitelik Seçicisi</a>
+                </li>
+            </ul>
+            <h6>Sizde Elemanlar</h6>
+            <ul>
+                <li>
+                    <a href="#">::after</a>
+                </li>
+                <li>
+                    <a href="#">::before</a>
+                </li>
+                <li>
+                    <a href="#">::first-letter</a>
+                </li>
+                <li>
+                    <a href="#">::first-line</a>
+                </li>
+                <li>
+                    <a href="#">::placeholder</a>
+                </li>
+                <li>
+                    <a href="#">::selection</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="toggle-btn">
+                <a href="#"> İçerikleri Göster</a>
+            </div>
+            <h2>CSS' Başlangıç</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h3>Neden CSS Kullanılmalı?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h3>CSS Büyük Bir Problemi Çözdü!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h2>CSS' Başlangıç</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h3>Neden CSS Kullanılmalı?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h3>CSS Büyük Bir Problemi Çözdü!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h2>CSS' Başlangıç</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h3>Neden CSS Kullanılmalı?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h3>CSS Büyük Bir Problemi Çözdü!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h2>CSS' Başlangıç</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h3>Neden CSS Kullanılmalı?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h3>CSS Büyük Bir Problemi Çözdü!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h2>CSS' Başlangıç</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h3>Neden CSS Kullanılmalı?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+            <h3>CSS Büyük Bir Problemi Çözdü!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, alias.</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi obcaecati sapiente repellat nostrum, quam magni laudantium labore vitae harum.</li>
+            </ul>
+        </div>
+
+    </div>
+    
+
+</body>
+</html>

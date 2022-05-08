@@ -1,0 +1,154 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    border: none;
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+
+.header{
+    display: flex; /* header sınıfına sahip etiket artık flex olur ve yan yana sıralanır. */
+    justify-content: space-between; /* space-between, aralarında eşit uzaklık olacak. space-evenly,  başta ve sonda da eşit aralık bırakır. space-around, başlangıçtaki ve sondaki mesafe ögelerin arasındaki mesafenin yarısı kadar olacak şekilde mesafe bırakır */
+    align-items: center;
+    height: 60px;
+    padding: 0 15px;
+    border-bottom: 1px solid #ddd;
+    
+
+}
+.header .logo{
+    font-size:  25px;
+    font-weight: bold;
+    color: #111;
+    letter-spacing: 2px;
+}
+
+.header .menu ul{
+    display: flex;
+}
+
+.header .menu ul li{
+    margin: 0 10px;
+}
+.header .menu ul li a {
+    font-size: 15px;
+    color: #333;
+}
+.header .login a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    background-color: aqua;
+    color: black;
+}
+
+.container{
+    height: calc(100% - 60); /* Sayfa uzunluğunun 100%  ünden 60 çıkarır ve bu sayede  sürekli sayfanın uzunluğunu değiştirmemize gerek kalmaz*/
+    display: flex;
+}
+
+.container .sidebar{   /* sol tarafta side bar oluşturduk */
+    width: 300px;
+    min-width:300px;
+    border-right: 1px solid #ddd;
+    overflow: auto; /* container sınıfının içinde olan sidebar sınıfına ait bir scroll bar çıkarır. */
+    padding: 15px 0;
+}
+.container .sidebar h6{
+    font-size: 17px;
+    color: #333;
+    letter-spacing: 2px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    padding: 0 15px;
+}
+.container .sidebar ul{
+    margin-bottom: 40px;
+}
+
+
+.container .sidebar ul li a {
+    display: block;
+    padding: 6px 15px;
+    color:  #999;
+}
+.container .sidebar ul li a:hover{
+    background-color: #eee;
+    color: black;
+}
+.container .sidebar ul:last-child{
+    margin-bottom: 0;
+}
+.container .content{
+    padding: 25px;
+    overflow: auto;
+}
+.container .content h2{
+    font-size: 30px;
+    margin-bottom: 25px;
+
+}
+.container .content h3{
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    border-left: 3px solid green;
+    padding-left: 15px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.container .content p{
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+
+    
+}
+.container .container ul{
+    margin-bottom: 15px;
+}
+
+.container .container ul li{
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+.container .content .toggle-btn{
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    margin-top: -5px;
+    display: none;
+}
+.container .content .toggle-btn  a{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    background-color: green;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+
+}
+@media(max-width: 798px){  /* bu şekilde istenilen boyuta göre istenilen yer gizlenip gösterilebilir. Tablet ve telefon için bu şekilde ayarlanabilir */
+    .container .sidebar{
+        display: none;
+    }       /* media özelliği ile sayfa max genişlik 798 olduğunda sidebar gözükmeyecek ve onun gözükmesi için buton gözükecektir. */
+    .container .content .toggle-btn{
+        display: block;
+    }
+}
+    

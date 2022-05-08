@@ -1,0 +1,153 @@
+/*
+Sass (Syntactically Awesome Style Sheet) bir css preprocessor’udur. 2006 yılında Hampton Catlin tarafından geliştirilmeye başlamıştır. Sass Ruby diline benzer bir yapı ile geliştirilmeye başlamıştır
+Pre-Processors’lar css kodlamada birçok yazım kolaylığı sağladığı gibi ekstra sağladığı imkanlar da mevcuttur. Değişken tanımlamalar (Variables), İç içe geçmiş yazım kolaylığı (nested rules), mixins, imports, if statement, for loop vs. Aslında bir nevi css’i programlama dili gibi kullanmamızı sağlar.
+https://www.sassmeister.com/
+
+------Variables, aynı kodun birçok yerde kullanılmasını engellemek ve tekrarlamayı gidermek amacıyla CSS'te değişken tanımlayabiliriz.
+$headingSize: 24px
+
+.content h2 {
+    font-size: $headingSize
+}
+
+-----Data Types:
+
+SCSS:
+$number: 10 + 5;
+  /$number: 15;
+$number: 1.5em + 1.3em;
+  /$number: 2.8em;
+$number: 10px + 5em;
+  / H A T A . . .
+
+------String, Metin yapılarıdır. Kullanımı açısından Sass’taki güzel yanı ister tek tırnak ile kullanın ister çift tırnakla kullanın ya da tırnak kullanmayın onun tipi string’dir (Örnek : “string”, ‘string’, string).
+
+SCSS:
+$font-type: "Arial"; 
+      ya da 
+$font-type: 'Arial'; 
+      ya da 
+$font-type: Arial;
+
+p{
+    font-family: $font-type
+}
+
+--------BOOLEAN: Sadece iki değer alan bir tiptir. Tek başına bir anlamı yoktur. kontrol öğeleriyle (if) birlikte kullanılır. İleride bunlardan da bahsedeceğim (Örnek : true, false).
+SCSS:
+$data: true;
+$data: false;
+
+----NULL: Null boş anlamında kullanılır. Boolean gibi tek başına bir anlamı yoktur (Örnek: null).
+SCSS:
+$data: null;
+
+------COLOR: Renkler de sass’ta bir veri tipidir.
+
+SCSS:
+$color: red;
+$color-2: lighten(white, 15%); // #b8dc70
+p{
+   color: $color-2;
+}
+
+
+----Nested Rules: İç içe stiller için pure css’te parent — child sistemini her seferinde kullanmak gerekiyordu ve bu bize kod tekrarına sebep oluyordu. Sass ile birlikte bu daha kullanışlı hale geldi.
+
+SCSS
+
+nav{
+    ul{
+        witdh: 100%
+    }
+    li{
+        witdh: 20%;
+        display:flex;
+    }
+    a{
+        padding:16px;
+        text-align:center;
+        text-decoration:none;   
+    }
+}
+----Pseudo Classes: Css’teki pseudo classlar hakkında küçük bir hatırlatma yapayım. :hover, :after gibi tagleri etkileyen bu gibi özelliklerdi.
+SCSS:
+a{
+   padding: 20px;
+   text:decoration: none;
+   color: blue;
+   &:hover{
+      color:red;
+   }
+}
+
+-------Comments:Tek satırdan oluşan açıklama satırları için // kullanılır. Çok satırlı açıklamalarda ise 
+
+
+
+------Mixins:Mixins sitede tekrar kullanabileceğimiz kod gruplarıdır. Sass dosyamızda önce mixin tanımlayıp gereken yerde de include ediyoruz. 
+
+@mixin banner{
+   width: 100%;
+   position: relative;
+   .banner-content{
+      position: absolute;
+      width: 100%;
+      top: 50%;
+   }
+}
+.lead-banner{
+   @include banner;
+   text-align: right;
+}
+.lessons-banner{
+   @include banner;
+}
+
+------Importing Files:Style klasörümüzde birden fazla style dosyamız mevcut ise index dosyamıza teker teker eklemek yerine ana style.scss dosyamıza import etmek işimizi kolaylaştıracaktır.
+style.scss
+@import “normalize”;
+@import “variables”;
+@import “mixins”;
+
+-------Mathematical Operators: Matematik Operatorleri “+ , -, *, /” gibi işaretlerden oluşuyor. Matematikteki temel 4 işlem için kullanılır. 
+li{
+   width( 100% / 6);
+}
+
+-----Extend: Extend bir miras alma yöntemidir. Benzer kodlar diğer seçicilerin içine dahil etmek için kullanılır. 
+Bunu “@extend miras-alinanin-ismi” diyerek yapıyoruz.
+SCSS:
+.button-base {
+   margin: 2px;
+   radius: 2px;
+}
+.error-base {
+   background-color: red;
+}
+.error-button {
+   @extend .button-base;
+   @extend .error-base;
+}
+
+SCSS:
+$data: 12;
+p {
+   @if $data < 3 {
+      color: red;
+   }
+   @else if $data == 3 {
+      color: blue;
+   }
+   @else {
+      color: white;
+   }
+}
+SCSS:
+@for $i from 1 through 3{
+   .item-#{$i} {
+      width: 5px * $i;
+   }
+}
+
+*/

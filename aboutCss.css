@@ -1,0 +1,361 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+Yazı Tipi Göreli(Bağıl) Uzunluklar
+Yazı tipi göreli birimleri, önceden tanımlanmış yazı tipi boyutu veya yazı tipi ailesi değeri ile ilgilidir ve şunları içerir:
+
+em, bu ölçü biriminde varsayılan font ailesinde (font-family) yer alan M harfinin genişliği ölçü için referans olarak alınır. 
+rem birimi em biriminden farklı olarak her zaman kök elementin (HTML belgelerinde html öğesidir.) değerini alır ve art arda sıralı em gibi kullanılmaz. rem birimi özellikle duyarlı tasarım sürecinde oldukça faydalıdır. rem ile HTML elementinin yazı tipini değiştirerek tüm sayfanın ölçeklendirilmesi sağlanabilir.
+ex birimi em ile aynı mantıkta çalışır ,“geçerli yazı tipinin x yüksekliği” veya bir “em‘ in yarısı” olarak tanımlanır. Belirli bir fontun x yüksekliği ise, o fontun küçük harf x’inin yüksekliğidir. Yazı tipi ailesi değiştikçe değişir. Nadiren kullanılan bir birimdir.
+ch (character)
+ch birimi ex birimine benzer ancak küçük harf x karakterinin yüksekliği yerine 0 (sıfır) karakterinin yüksekliğini alır. Yine font ailesine bağlı olarak değişkenlik gösterir.
+
+
+Pencere Boyu veya Bakış Alanı Birimi (Viewport)
+Viewport, tarayıcı ekranın kullanıcı tarafından görünen kısmını ifade eder. HTML5, web tasarımcılarının < meta > etiketi ile görüntüleme alanı üzerinden kontrol sahibi olmamızı sağlayan bir yöntem geliştirmesi sayesinde bu yeni ölçü birimini CSS’e kazandırmış oldu.
+
+vw , görüntü alanı genişliği birimidir. 1vw görünüm alanının 1/100’üne eşittir. Örneğin pencerenin genişliği 1000px ise 1vw 10px’e karşılık olacaktır. vw temel olarak yüzde ifadesine benzese de üst elementlerden (parent) veya üst elementlerin genişliğinden bağımsız işler.
+vh, görüntü alanı yüksekliği birimidir ve vw ile benzer kurallarda işler, yani 1vh görünüm alanının 1/100’üne eşittir. Örneğin pencerenin yüksekliği 1000px ise 1vh 10px olacaktır.
+vmin görüntü alanı yüksekliği (vh) ve görüntü alanı genişliği (vw ) değerlerine bakar ve minimum olan değer üzerinden 1/100 olarak oranlar. Örneğin, 1900x1080px bir ekranda min değer 1080px olacaktır. Dolayısıyla 1vmin 10.8px olarak değerlendirilir.
+vmax tıpkı vmin gibi görüntü alanının yükseklik ve genişlik değerini inceler ancak bu sefer max olan değer üzerinden işlem gerçekleştirir. Yani, yukarıdaki örnek üzerinden ilerleyecek olursak 1900x1080px bir ekranda 1vmax karşılığı 19px olacaktır.
+% (percentages),  başka bir uzunluğa bağlı olarak verilen yüzde orantı birimdir. Örneğin sayfamızda 500px genişliğinde bir alan olduğunu düşünürsek ve içerisine eşit boylarda 4 kutu oluşturacaksak kutuların genişliklerine “width: 25%;” değeri veririz. Böylece kutuların mutlak boyutunu 125px değerine eşitleyebiliriz. Yüzde ölçülendirme birimi responsive tasarım anlayışının en temel ölçü birimidir.
+
+--- Aspect-Ratio Container, fotoğraf ya da videolar responsive tasarımı korumak için kullanılır. Pencere küçüldükçe eşit oranda resmın uzunluğu, genişliğine oranla küçülmesini istersek kullanırız.
+.aspect-ratio-contaier{
+    position: relative;
+    height: 0;
+    padding-top: 50%; burada yüksekliğinin ne kadar olmasını istediğmizi belirtiriz ki oranlı olarak nasıl küçüleceğini bilsin
+
+    .aspect-ratio-item {
+        position: absolute; 
+        left: 0;
+        top: 0; konumlandırıldı
+        width: 100% !important; resmin ya da videonun varsayılan boyutlandırmasını ezmek için important denildi
+        height: 100% !important;
+    }
+}
+<!----- Aspect-Ratio Container
+
+user agent style , tarayıcılar tarafından gelen ön tanımlı css kodlarıdır.
+normalize.css, farklı tarayıcılardaki css farklılıklarını standarta getiren css kodu
+
+display,
+Inline elements, bir şeyler yazarken (örneğin a ve span etiketi) yan yana geliyorsa alt satıra geçmeden, inline elementtir. Genellikli text içerikli kullanılır.
+block elements, bir şeyler yazdığımızda (p veya h1) her yeni eleman sonrası alt satıra geçiyorsa block elementtir. Kapsayıcı elementtir.
+
+Ozellikler
+initial, bir elemenanın özelliğini değiştirdiyseniz initial dedğimizde varsayılan haline geri döner.
+inherit, kapsaycısı neyse onun gibi davranmasını isteriz. Örneğin kapsayıcısı block ise o da block olacaktır.
+none, sayfada bir şeyi saklamak için kullanılır.
+display:block, elementleri satırı komple kapatır.
+display:inline, elementler yan yana yazılır.
+display:inline-block, inline bir element'e genişlik ve uzunluk gibi değerler tanımlayabiliriz. Kapsayıcı bir eleman gibi özellikler verilebilir hale getirilir inline element.
+list-item, tarayıcıda ön tanımlı gelen her bir li alt alta gelir.
+table, varsayılan olarak talo özellikleri gelir. td ve tr gibi elemanları table elementi özelliklerini taşır.
+
+            CSS Flexbox
+Belli bir container içerisindeki elemanları istediğimiz gibi yerleştirmeye yarara
+Kapsayıcı elemanlarda çalışan özellikler: flex-direction, flex-wrap, justify-content, align-items, align-content
+İç elemanlarda çalışan özellikler: align-self, flex-grow, flex-shring, flex-basis, order
+
+flex-direction; display-flex verildiği anda default olarak row olarak gelir. Bunu değitirebiliriz.
+flex-direction: row; elemanların yanyana dizilmesini sağlar ve default özelliktir.
+flex-direction: row-reverse; elemanların yan yana dizilmesini ister ama tersten 
+flex-direction: colmn; elemanların yukarıdan aşapı bir kolon şeklinde sıranlanmasını sağlar
+
+flex-wrap: wrap-reverse; sarmalamayı tersten başlatır
+
+
+justify-content: içerideki elemanların arasındaki boşlukları ve container'ın neresinde duracağını belirleriz
+justfiy-content:start; container içerisinde elemanların x eksininde başlangıç tarafında konumlanmasını sağlarız
+justfiy-content:end;container içerisinde elemanların x eksininde bitiş tarafında konumlanmasını sağlarız
+justify-content: space-around; sağda ve solda eşit boşluklar bırakır ve elemanların arasını eşit b mesafe bırakarak eşit olarak aralarını açar
+justify-content: space-between; sağ ve solu sıfırlar ve elemanlar arasında sadece boşluk bırakır
+justify-content: space-evenly; space-around aksine sağda ve soldaki boşluklar elemanlar arasındaki boşluklar ile aynı mesafeye sahip şekilde mesafe bırakılır
+
+
+Flex ile (esnek kutu modeli) ile yapılandırılmış bir div kutusundaki elemanları dikeyde hizalamak için kullanılır.
+align-item, tek satırlar için geçerlidir. wrap özelliği ile sarmal bir yapıda olursa eleman align-item işe yaramayacaktır. Default özellüğü stretch'tir.
+align-item: stretch; Varsayılan özelliğidir.Kapsaycı kutu içindeki elemanları tüm kutuyu kapsayacak şekilde esnetir.
+align-item: center; Kapsayıcı kutu içindeki elemanları kutunun merkezinde / ortasında hizalar.
+align-item: flex-start; Kapsayıcı div veya kutu içerisindeki html elemanlarını kutunun başlangıcında hizalar.
+align-item: flex-end; Kapsayıcı div veya kutu içerisindeki html elemanlarını kutunun sonunda hizalamak için kullanılır.
+align-item: baseline; Kutu içerisindeki elemanları kutunun başlangıcına göre konumlar.
+
+
+Esnek kutu içerisindeki elemanlar yatay eksende tüm genişliği kaplamadığı zaman justify-content özelliği elemanları hizalamak için kullanılabilir.
+align-content, birden fazla satırı kapsayan eleman için kullanılır. Default özelliği flex-start'tır
+align-content: flex-start; Varsayılan değer. Elemanlar kabın başında konumlandırılmıştır.
+align-content: flex-end; Elemanlar kabın sonunda konumlandırılmıştır.
+align-content: center; Elemanlar kabın ortasında konumlandırılmıştır.
+align-content: space-between; Öğeler esnek kutunun başına ve sonuna yaslanır ama diğer elemanlar arasında eşit boşluklar vardır.
+align-content: space-around; Öğeler esnek kutunun içersinde eşit aralıklarla konumlanır.
+
+
+İç elemanı etkileyen özellikler
+align-self: flex-start; ile x eksininde başlangıcında konumlandırır elemanı
+flex-grow:1; container/kapsayıcı içerisinde boşluk varsa her zaman bu boşlukları doldurmasını isteriz.
+flex-shrink:1; istenilen elemanın kapsayıcı içerisinde daha az yer kaplaması için dğier elemanlar tarafından ezilmesi
+order:0; 0 1 şeklinde elemanlar arasında öncelik verilebilir ve sıralamada öncelik verilebilir
+
+float ile flex arasındaki fark, flex sayfada konumlandırma yapar. Float ise bir resmin konumu yapıp sağından veya solundan metnin akmasını sağlar
+
+*/
+.container {
+    display: flex;
+    /*display: flex, alt alta gelen block elementleri yan yana sıralamamızı sağlar */
+    flex-wrap: wrap;
+    /*display-wrap: wrap; ile flex olarak tanımlanmış elementlerin sarmallanmasını isteriz. Bu şekilde flex elemanlar genişliği kabul eder. */
+}
+
+.box {
+    width: 50%;
+    /*box sınıfı flex olarak tanımlandığı için bu biçimlendirmeyi kabul etmez. Fakat flex-wrap: :wrap; özelliği tanımlanınca verilen genişliği kabul eder. */
+    color: white;
+    text-shadow: 0 1px 3px rgba(black, 0.4);
+    padding: 10px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.box-1 {
+    background-color: blue;
+}
+
+.box-2 {
+    background-color: purple;
+}
+
+.box-3 {
+    background-color: green;
+}
+
+.box-4 {
+    background-color: yellow;
+}
+
+.box-5 {
+    background-color: orange;
+}
+
+.firstExample {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    width: 384px;
+    background-color: aqua;
+    justify-content: space-around;
+}
+
+.colmns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.svg {
+    font-size: 20px;
+    width: 1rem;
+    height: 1rem;
+    background-color: antiquewhite;
+    align-content: center;
+    margin-top: 5px;
+}
+
+.text {
+    align-content: center;
+}
+
+.secondExample {
+    margin-top: 50px;
+    width: 384px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eeedef;
+}
+
+.view {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid white;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: 3px 3px grey;
+    width: 300px;
+    padding: 10px;
+}
+
+.leftSide {
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: center;
+}
+
+.img {
+    height: 30px;
+    width: 30px;
+    background-color: blue;
+    align-items: center;
+    align-content: center;
+    margin-top: auto;
+    border-radius: 50%;
+    margin-right: 10px;
+    flex-shrink: 0;
+    /* img sınıfın olduğu elemanı büyüklüğü asla değişmesin/baskılanmasın */
+}
+
+.head {
+    font-weight: bold;
+}
+
+.rightSide {
+    flex-grow: 1;
+}
+
+.parag {
+    color: grey;
+    margin-top: 5px;
+}
+
+.arrow {
+    font-size: 16px;
+    width: 0.3rem;
+    height: 1rem;
+    background-color: grey;
+    margin-left: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    flex-shrink: 0;
+}
+
+.port {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 80px;
+    background-color: #eeedef;
+}
+
+.topSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.back {
+    font-size: 16px;
+    width: 1rem;
+    height: 1rem;
+    background-color: black;
+}
+
+.stopStart {
+    font-size: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: black;
+}
+
+.next {
+    font-size: 16px;
+    width: 1rem;
+    height: 1rem;
+    background-color: black;
+}
+
+.bottomSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.now {
+    font-size: 16px;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: black;
+}
+
+.time {
+    width: 70%;
+    height: 5px;
+    background-color: grey;
+}
+
+
+.totalTime {
+    font-size: 16px;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: black;
+}
+
+.card {
+    width: 300px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: grey;
+    width: calc(50% - 5px);
+    height: 100px;
+    margin: 5px;
+    position: relative;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.tik {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 10px;
+}
+
+/* ------CSS Position & Z-Index----------------
+Css'te top-right-bottom-left konumlarına herhangi bir değer verebilmek için, browser'ın bu değeri algılaması için, mutlaka o elemente position verilmesi gerekmetedir.  
+
+position:relative, olarak tanımlanan öğe aslında hala kendi yerini korumaktadır. Konumlandırmadan sonra ondan sonra olan eleman onun yerini alamaz
+
+position:absolute, ilk kapsayıcısına bak relative verilmiş ise ona göre konumlanır. Bu şekilde sırayla bütün kapsayıcılarını tek tek sorar, en sonunda body'i relative alarak konumlanır
+
+position:fixed, genellikle headarda kullanılır. Eğer header'ın genişliği ve yüksekliği yoksa fixed verdiğimizde header görünmez olur. Fixed özelliğini tanımladığımız header, sayfada scroll yaptığımızda da scroll'u takip edecektir.
+
+position:static, daha önce tanımlanmış konumlandırma özelliklerini yok sayar ve ilk haline döner. 
+
+z-index'in çalışması için position özelliği verilmesi gerekmektedir. static hariç
+z-index:1, z koordinatında en üstte olmasını isteriz. HTML yapısı gereği yukarıdan aşağı şeklinde ilerler ve sonraki gelen en üste çıkmış olur. Bunu engellemek için kullanırız. 
+
+*/
