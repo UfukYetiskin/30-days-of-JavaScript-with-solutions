@@ -1,6 +1,5 @@
 //30 Days Of JavaScript: Promises
 
-
 /*
 Biz insanlar, belirli bir zamanda bir faaliyette bulunma sözü veririz veya alırız. Sözümüzü tutarsak başkalarını mutlu ederiz, 
 ama sözümüzü tutmazsak hoşnutsuzluğa yol açabilir. JavaScript'te söz vermenin yukarıdaki örneklerle ortak bir yanı vardır.
@@ -204,3 +203,106 @@ const fetchData = async () => {
 }
 console.log('=======async and await');
 fetchData();
+
+// Exercises Level 1
+
+const countriesAPI = 'https://restcountries.com/v2/all'
+const catsAPI = 'https://api.thecatapi.com/v1/breeds'
+
+console.log('----- Exercises Level 1 -------')
+console.log('----- Exercises Level 1 -------')
+console.log('----- Exercises Level 1 -------')
+fetch(countriesAPI)
+    .then(response => response.json())
+    .then(data => {
+        let infoCountry = data;
+
+        infoCountry.map((country) =>{
+            console.log("Country Name:" + country.name + " Capital: " + country.capital + " Population: " + country.population);
+        })
+    })
+
+const countrData = async ()  => {
+
+    try{
+        const response = await fetch(countriesAPI);
+        const counrtyInfo = await response.json();
+        counrtyInfo.map((country) =>{
+            console.log("Country Name:" + country.name + " ----Capital: " + country.capital + " --------Population: " + country.population);
+        })
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+countrData();
+console.log('----- Exercises Level 2 -------')
+console.log('----- Exercises Level 2 -------')
+console.log('----- Exercises Level 2 -------')
+console.log('----- Exercises Level 2 -------')
+//Exercises: Level 2
+
+fetch(catsAPI)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+    })
+
+const countCatData = async () => {
+    try{
+        const response = await fetch(catsAPI)
+        const catInfo = await response.json();
+
+        catInfo.map((cat) => {
+            console.log("Cat Name: " + cat.name + "----- "+" Cat weight: " + cat.weight.metric);
+        })
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+countCatData();
+/*
+fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let authors = data;
+
+      authors.map(function(author) {
+        let li = document.createElement('li');
+        let name = document.createElement('h2');
+        let email = document.createElement('span');
+
+        name.innerHTML = `${author.name}`;
+        email.innerHTML = `${author.email}`;
+
+        li.appendChild(name);
+        li.appendChild(email);
+        list.appendChild(li);
+      });
+    })
+
+  ul.appendChild(list);
+*/
+console.log('----- Exercises Level 3 -------')
+console.log('----- Exercises Level 3 -------')
+console.log('----- Exercises Level 3 -------')
+console.log('----- Exercises Level 3 -------')
+const countCountriesLang = async () => {
+    try{
+        const response = await fetch(countriesAPI);
+        const lang = await response.json();
+
+        let totalLang= [];
+        lang.map((eleman) => {
+            totalLang.push(eleman.languages)
+            
+        })
+        console.log('Languages Count: '+totalLang.length)
+    }catch(error){
+        console.log(error)
+    }
+}
+countCountriesLang();
