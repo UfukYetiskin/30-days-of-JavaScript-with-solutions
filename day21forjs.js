@@ -91,8 +91,8 @@ console.log('---- Adding attribute-------')
 //Adding attribute
 //HTML'nin açılış etiketine, öğe hakkında ek bilgi veren bir nitelik eklenir. Ortak HTML özellikleri: id, class, src, style, href,disabled, title, alt. Dördüncü başlık için id ve sınıf ekleyelim.
 const titles = document.querySelectorAll('h1')
-titles[3].className = 'title'
-titles[3].id = 'fourth-title'
+//titles[3].className = 'title'
+//titles[3].id = 'fourth-title'
 
 
 //Adding attribute using setAttribute
@@ -184,3 +184,67 @@ titlesFont.forEach((item, index) => {
         item.style.fontSize = '16px';
     }
 })
+
+//Exersices Level 1 
+
+const paragraphs = document.querySelectorAll('p');
+for(let i = 0; i < paragraphs.length; i++){
+    console.log(paragraphs[i].textContent);
+}
+paragraphs[3].textContent = 'Changed Content with Fourth';
+console.log(paragraphs[3].textContent);
+
+paragraphs[0].id='first-parag';
+paragraphs[1].id='second-parag';
+paragraphs[2].id='third-parag';
+paragraphs[3].id='fourth-parag';
+
+for(let i = 0; i<paragraphs.length; i++){
+    paragraphs[i].className = 'paragraphs';
+    console.log(paragraphs[i]);
+}
+
+//Exeercises Level 2
+paragraphs.forEach((item) => {
+    item.style.color = 'blue'
+    item.style.backgroundColor = 'orange'
+    item.style.fontSize = '44px'
+    item.style.border = '3px solid red';
+})
+
+paragraphs.forEach((item, index) => {
+    if(index == 0 && index == 2){
+        item.style.color = 'black'
+    }else{
+        item.style.color= 'red'
+    }
+})
+
+//Exercises Level 3
+const now = new Date();
+let year = now.getFullYear();
+let month =  now.getMonth();
+let date = now.getDate();
+let hour = now.getHours();
+let minute = now.getMinutes();
+let second = now.getSeconds();
+
+const heading = document.querySelectorAll('h1');
+heading.style.backgroundColor = 'green'
+
+
+const liDOM = document.querySelectorAll('li');
+liDOM.forEach((item, index) => {
+    if(index === 0){
+        item.style.backgroundColor = 'green';
+    }
+    if(index % 2 === 0){
+        title.style.color = 'green'
+    }
+    if(index === 1){
+        item.style.backgroundColor = 'yellow';
+    }
+})
+
+
+
