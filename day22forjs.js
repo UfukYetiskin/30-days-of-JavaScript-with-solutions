@@ -63,3 +63,39 @@ for( let i = 0; i < 3; i++){
 
 const ul = document.querySelector('ul')
 ul.innerHTML = '';
+//Exercises Level 1
+for(let i = 0; i <= 100; i++){
+    const div = document.createElement('div');
+    div.innerText = `${i}`
+    div.style.width = '40px'
+    div.style.margin = '20px'
+    div.style.textAlign = 'center'
+    div.style.display = 'flex'
+    div.style.flexDirection = 'row'
+    div.style.flexWrap = 'wrap'
+    document.body.appendChild(div)
+    if(i % 2 === 0){
+        div.style.backgroundColor = 'green'
+    }
+    else{
+        div.style.backgroundColor = 'yellow'
+    }
+    if(i >= 2){
+        for(let num = 2 ; num < i; num++){
+            if(num % i == 0){
+                div.style.color= 'red'
+            }
+        }
+    }
+}
+
+const countries = ['Afghanistan', 'Albania', 'Algeria', 'Andora', 'Argentina', 'Armenia', 'Australia', ' Bahrain', 'Bangladesh', 'Barbados','Benin', 'Bhutan', 'Bolivia', ' Brunei', 'Bulgaria', 'Burkina Faso']
+for(let i = 0; i<countries.length; i++){
+    const span = document.createElement('span');
+    span.innerText =`${countries[i]}`
+    span.style.display ='inline-block'
+    span.style.border = '2px solid black'
+    span.style.padding  = '20px'
+    span.style.margin = '10px'
+    document.body.appendChild(span);
+}
