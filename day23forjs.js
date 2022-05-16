@@ -8,14 +8,14 @@ bir geri çağırma işlevi olmak üzere iki bağımsız değişken alır .
 */
 console.log('syntax Event Listeners')
 // selectedElement.addEventListener('eventListener', function(e){
-     //olaydan sonra gerçekleşmesini istediğiniz aktivite burada olacaktır - the activity you want to occur after the event will be in here
+//olaydan sonra gerçekleşmesini istediğiniz aktivite burada olacaktır - the activity you want to occur after the event will be in here
 // })
 console.log('selectedElement.addEventListener("eventListener", function(e){\nolaydan sonra gerçekleşmesini istediğiniz aktivite burada olacaktır - the activity you want to occur after the event will be in here\n})')
 
 //or
 
 // selectedElement.addEventListener('eventlistener', e => {
-     //olaydan sonra gerçekleşmesini istediğiniz aktivite burada olacaktır -the activity you want to occur after the event will be in here
+//olaydan sonra gerçekleşmesini istediğiniz aktivite burada olacaktır -the activity you want to occur after the event will be in here
 // })
 console.log('selectedElement.addEventListener("eventlistener", e => {\n olaydan sonra gerçekleşmesini istediğiniz aktivite burada olacaktır -the activity you want to occur after the event will be in here})')
 
@@ -35,7 +35,7 @@ button.addEventListener('click', e => {
 })
 //Bir olay ayrıca doğrudan HTML öğesine satır içi komut dosyası olarak eklenebilir.
 //Example: onclick
-const clickme =  () => {
+const clickme = () => {
     alert('We can attack event on HTML element');
 }
 
@@ -57,7 +57,7 @@ const msEnter = document.querySelector('#mouseEnter')
 msEnter.addEventListener('mouseenter', e => {
     console.log('mouseenter eventi')
     console.log('e gives the event listener object: ', e)
-    console.log('e.target gives the selected element: ' , e.target)
+    console.log('e.target gives the selected element: ', e.target)
     console.log('e.target.textContent gives the selected element: ', e.target.textContent);
 })
 console.log("-----Eventler----- \nclick - öğe tıklandığında \ndblclick - öğeye çift tıklandığında \nmouseenter - fare noktası öğeye girdiğinde\nmouseleave - fare işaretçisi öğeden ayrıldığında\nmousemove - fare işaretçisi öğe üzerinde hareket ettiğinde\nmouseover - fare işaretçisi öğe üzerinde hareket ettiğinde\nmouseout - fare işaretçisi öğeden dışarı çıktığında\ninput - değer giriş alanına girildiğinde\nchange -giriş alanında değer değiştiğinde\nblur -öğe odaklanmadığında\nkeydown - bir tuş kapalıyken\keyup - bir anahtar açıkken\nkeypress - herhangi bir tuşa bastığımızda\nonload - tarayıcı bir sayfayı yüklemeyi bitirdiğinde")
@@ -92,7 +92,7 @@ const calculater = document.querySelector('#calculate')
 
 let bmi
 calculater.addEventListener('click', e => {
-    bmi = kg.value / (height.value * height.value) 
+    bmi = kg.value / (height.value * height.value)
     alert(`your bmi is ${bmi.toFixed(2)}`)
     console.log(bmi)
 })
@@ -121,5 +121,39 @@ inputValue.addEventListener('blur', (e) => {
 //keypress, keydown and keyup
 //Farklı olay dinleyici türlerini kullanarak klavyenin tüm tuş numaralarına erişebiliriz. Tuşa basmayı kullanalım ve her klavye tuşunun keyCode'unu alalım.
 document.body.addEventListener('keypress', (e) => {
-    console.log(e.keyCode)
+    //console.log(e.keyCode)
+})
+//Exercises Level 1
+
+const filterNumber = document.createElement('input')
+filterNumber.style.marginBottom = '20px'
+filterNumber.placeholder = 'Write'
+document.body.appendChild(filterNumber)
+
+const generate = document.createElement('button')
+generate.innerText = 'Generate'
+document.body.appendChild(generate)
+
+generate.addEventListener('click', e => {
+    for (let i = 0; i < filterNumber.value; i++) {
+        const span = document.createElement('span')
+        spanValue = span.value;
+        span.value = i;
+        span.innerText = i;
+        span.style.border = '1px solid black'
+        span.style.padding = '10px'
+        span.style.margin = '10px'
+        span.style.flexWrap = 'wrap'
+        document.body.appendChild(span);
+        
+    }
+    filterNumber.textContent = ""
+
+})
+
+//Exercises Level 2
+
+document.body.addEventListener('keypress', (e) => {
+    console.log('You press: ', e.key)
+    console.log(e.keyCode);
 })
