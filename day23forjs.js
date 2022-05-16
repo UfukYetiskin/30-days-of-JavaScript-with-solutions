@@ -110,3 +110,16 @@ input.addEventListener('input', e => {
 
 //blur event
 //input veya change'in aksine , blur olayı, girdi alanı odakta olmadığında meydana gelir.
+const inputValue = document.querySelector('#blurE')
+const pTag = document.querySelector('#blurEvent')
+
+inputValue.addEventListener('blur', (e) => {
+    pTag.textContent = 'Field is required'
+    pTag.style.color = 'red'
+})
+
+//keypress, keydown and keyup
+//Farklı olay dinleyici türlerini kullanarak klavyenin tüm tuş numaralarına erişebiliriz. Tuşa basmayı kullanalım ve her klavye tuşunun keyCode'unu alalım.
+document.body.addEventListener('keypress', (e) => {
+    console.log(e.keyCode)
+})
