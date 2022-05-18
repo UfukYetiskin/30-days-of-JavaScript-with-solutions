@@ -2875,7 +2875,7 @@ let totalPopulation = 0;
 for(let i = 0 ; i< countries_data.length; i++){
     totalPopulation += countries_data[i].population;
 }
-console.log(totalPopulation);
+console.log(totalPopulation);//7758589152 çıktısı veriyor
 
 //reduce uygulaması
 const sumPop = (toplam , simdikiDeger) => toplam + simdikiDeger;
@@ -2885,3 +2885,48 @@ const redDeneme = countries_data.reduce(function(acc, prev){
     return acc + prev.population;
 },0) //0 başlangıç değeridir. Verilmesi gerekir total çıktı almak için
 console.log('Reduce deneme 2: ', redDeneme); //7758589152 çıktısı veriyor
+
+//sort fonk ile ülkelerin popülasyonuna göre küçükten büyüğe göre sıraladık. Bu yüzden length-1 ile sonuncu olan yanı en yüksek popülasyonu olan ülkeyi aldık
+const sortPopulation = countries_data.sort(function(a,b) {
+    return a.population - b.population;
+})
+console.log(sortPopulation);
+console.log(`Country: ${sortPopulation[countries_data.length - 1].name}`,sortPopulation[countries_data.length - 1].population);
+console.log(sortPopulation[countries_data.length - 2]);
+console.log(sortPopulation[countries_data.length - 3]);
+console.log(sortPopulation[countries_data.length - 4]);
+console.log(sortPopulation[countries_data.length - 5]);
+console.log(sortPopulation[countries_data.length - 6]);
+console.log(sortPopulation[countries_data.length - 7]);
+console.log(sortPopulation[countries_data.length - 8]);
+console.log(sortPopulation[countries_data.length - 9]);
+console.log(sortPopulation[countries_data.length - 10]);
+
+const populationDiv = document.querySelector('.population')
+
+
+const mostPop = document.createElement('span');
+mostPop.innerText = `World ${redDeneme} \n`
+
+populationDiv.appendChild(mostPop);
+for(let i = 1 ; i <= 11; i++){
+    const countryName = document.createElement('span')
+    countryName.innerText = `${sortPopulation[countries_data.length - i].name}`;
+    
+    const background = document.createElement('span')
+    background.style.width ='200px'
+    background.style.height = '30px'
+    background.style.backgroundColor ='orange'
+    background.innerText = 'Background Burası agam';
+    background.style.color = 'orange'
+    background.style.margin = '30px';
+
+    const populasyon = document.createElement('span');
+    populasyon.innerText = `${sortPopulation[countries_data.length - i].population}\n`
+
+
+
+    populationDiv.appendChild(countryName);
+    populationDiv.appendChild(background);
+    populationDiv.appendChild(populasyon);
+}
