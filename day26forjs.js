@@ -2862,3 +2862,62 @@ const countries_data = [
         "area": 390757
     }
 ]
+
+const filterArea = document.querySelector('.filterArea');
+const p = document.querySelector('p')
+p.innerText = `Total Number of Countries: ${countries_data.length}`;
+p.style.color = 'white';
+
+const input = document.querySelector('input');
+const buttonFilter = document.getElementById('filter');
+const buttonCollocation = document.getElementById('collocation');
+
+buttonFilter.addEventListener('click', e => {
+    /* Bu kod bloğu içierisinde countries data içerisindeki ülke isimlerini listeler
+    countries_data.map((item) => {
+        const span = document.createElement('span')
+        span.innerText = `${item.name} \n`
+        span.style.backgroundColor = 'rgba(197,197,197,0.8)'
+
+
+        filterArea.appendChild(span);
+    })*/
+
+    const filterele = countries_data.filter(function (e) {
+        return e.name[0] == input.value[0]
+    }).map(function (e) {
+        return e.name;
+    })
+    const span = document.createElement('span')
+    span.innerText = `${filterele} \n \n`
+    span.style.backgroundColor = 'rgba(197,197,197,0.8)'
+    span.style.margin = '10px'
+
+    filterArea.appendChild(span);
+
+    input.value = '';
+})
+
+buttonCollocation.addEventListener('click', e => {
+    const filterele = countries_data.filter(function (e) {
+        return e.name == input.value;
+    }).map(function (e) {
+        return e.name;
+    });
+    // const span = document.createElement('span')
+    // span.innerText = `${filterele.join()} \n`
+    // span.style.backgroundColor = 'rgba(197,197,197,0.8)'
+    // span.style.padding = '10px'
+    // span.style.margin = '10px'
+    for (let i = 0; i < filterele.length; i++) {
+        const span = document.createElement('span')
+        filterele = filterele.split(",");
+        span.innerText = `${filterele[i]} \n`
+        span.style.backgroundColor = 'rgba(197,197,197,0.8)'
+        span.style.padding = '10px'
+        span.style.margin = '10px'
+    }
+
+    filterArea.appendChild(span);
+    input.value = '';
+})
