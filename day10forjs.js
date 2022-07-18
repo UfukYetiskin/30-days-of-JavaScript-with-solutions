@@ -166,6 +166,16 @@ friends.set('Fevzi', 'Uşak')
 friends.set('Sefa', 'Manisa')
 friends.set(3, 'Kırşehir')
 friends.set(true, 'Karaman')
+
+const gumus = {
+    name : 'Ümmühan'
+}
+const ufuk = {
+    name : 'Ufuk'
+}
+
+friends.set(gumus, 23).set(ufuk, 26)
+
 console.log(friends)
 //Burada istediğimiz tipte key verebiliyoruz
 // 0: {"Fevzi" => "Uşak"}
@@ -173,7 +183,7 @@ console.log(friends)
 // 2: {3 => "Kırşehir"}
 // 3: {true => "Karaman"}
 
-
+console.log(friends.size)//6
 
 //Bir diziden Map oluşturma
 const cities = [
@@ -184,7 +194,12 @@ const cities = [
 ]
 const city = new Map(cities)
 console.log(city); // Map(4) {'Kocaeli' => 'İzmit', 'Ankara' => 'Çankaya', 'Denizli' => 'Pamukkale', 'Diyarbakır' => 'Silvan'}
+
+//friends objesinin öğe sayısını verir
 console.log(city.size); //4
+
+//key'i 3 olan özelliğin valuesunu alırız.
+console.log(friends.get(3)) //Kırşehir
 
 //Map' bir değer ekleme
 
@@ -213,6 +228,57 @@ for(const country of countiesMap){
 (2) ['Sweden', 'Stockholm']
 (2) ['Norway', 'Oslo']
 */
+
+//friends objesinin keylerini döndürür
+ console.log(friends.keys())
+//  0: "Fevzi"
+//  1: "Sefa"
+//  2: 3
+//  3: true
+//  4: Object
+//  5: Object
+
+
+//friends objesinin valueslarını döndürür.
+console.log(friends.values())
+// 0: "Uşak"
+// 1: "Manisa"
+// 2: "Kırşehir"
+// 3: "Karaman"
+// 4: 23
+// 5: 26
+
+//friends objesinin hem key'ini hem de values'unu döndürür
+console.log(friends.entries())
+
+// 0: {"Fevzi" => "Uşak"}
+// 1: {"Sefa" => "Manisa"}
+// 2: {3 => "Kırşehir"}
+// 3: {true => "Karaman"}
+// 4: {Object => 23}
+// 5: {Object => 26}
+
+//friends objesinin keylerini döndürürz
+for(let item of friends.keys()){
+    console.log(item)
+}
+//Fevzi
+//Sefa
+//3
+//true
+//Ümmühan
+//Ufuk
+
+//friends.entries ya da friendsi  diziye çevirerek forEach metodunu kullanabiliriz
+[...friends.entries()].forEach(item => console.log(item))
+
+const ark = {
+    name : 'Taha',
+    age : 123
+}
+//ark objesinden bir map yaratmak istersek entries özelliği ile key ve valueları alarak oluştururuz.
+const arkadaslar = new Map(Object.entries(ark))
+
 
 for(const [country, city1] of countiesMap){
     console.log(country, city1)
