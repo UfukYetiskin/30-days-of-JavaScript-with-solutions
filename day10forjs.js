@@ -6,6 +6,15 @@
 const companies = new Set();
 console.log(companies);//Set(0) {size: 0}
 
+
+const family = new Set(['Vahap', 'Filiz', 'Meral', 'Ferat', 'Gurbet', 'Ufuk']);
+for(const members of family){
+    console.log('kim: ' + members)
+}
+//Set ile oluşturulan değişkeni bir diziye çevirmemiz gerekmektedir map fonksiyonunu kullanmamız için
+[...family].map((uye) => {
+    console.log(uye)
+})
 //Creating set from array
 const languages = ['English', 'Finnish', 'English', 'French', 'Spanish', 'English', 'French']
 
@@ -31,6 +40,7 @@ universities.add('PAÜ');
 universities.add('KOÜ');
 universities.add('KTÜ');
 universities.add('İTÜ');
+universities.add('BÜ')
 
 console.log(universities.size)//4 elemnts of Set
 console.log(universities); // Set(4) {'PAÜ', 'KOÜ', 'KTÜ', 'İTÜ'}
@@ -44,19 +54,45 @@ for(const universty of universities){
 //KTÜ
 //İTÜ
 
+const childs = ['Deniz', 'Artemis', 'Uzay']
+const childSet = new Set();
+//childs dizisindeki elemanları childSet içerisine ekliyoruz
+for(let child of childs){
+    childSet.add(child)
+}
+console.log(childSet);
+
+
 //Set'ten bir eleman silmek
 
 console.log(universities.delete('KTÜ')); //true
 console.log(universities.size) // 3 eleman kaldı
 
+//childSet içerisindeki bütün elemanları sildik.
+for(let child of childSet){
+    childSet.delete(child)
+}
+console.log(childSet)
+
+
 // Set içerisinde eleman kontrol etmek
 console.log(universities.has('İTÜ')); //true
 console.log(universities.has('BOÜ')); //false
+
+//Kontrol için tekradan childSet içerisine eleman ekledik.
+for(let child of childs){
+    childSet.add(child)
+}
+console.log(childSet.has('Vahap'))//false
+console.log(childSet.has('Artemis'))//true
 
 //Clearing the set, set'in içindeki bütün elemanları silme 
 
 universities.clear();
 console.log(universities); //Set(0) {size: 0}
+
+childSet.clear()
+console.log(childSet)//Set(0) {size: 0}
 
 const cars = ['Audi', 'Suzuki', 'Audi', 'Mercedes', 'BMW', 'Mercedes', 'Skoda', 'Toyota', 'Mercedes'];
 const carsSet = new Set(cars);
@@ -65,7 +101,6 @@ console.log(`Set: ${carsSet}, Set Size: ${carsSet.size}`);  //Set: [object Set],
 console.log(carsSet) //Set(6) {'Audi', 'Suzuki', 'Mercedes', 'BMW', 'Skoda', …}
 
 const counts =[]
-const count = {}
 
 for(const c of carsSet){
     const filterCars = cars.filter((crs) => crs === c );

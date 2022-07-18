@@ -22,3 +22,14 @@ button.addEventListener('click', e => {
 
     div.appendChild(span);
 })
+const insert = document.querySelector('#insert')
+const text = document.querySelector('#input')
+const list = document.querySelector('#list')
+
+insert.addEventListener('click', e => {
+    const li = document.createElement('li')
+    li.innerText = text.value;
+
+
+    list.appendChild(li);
+})
