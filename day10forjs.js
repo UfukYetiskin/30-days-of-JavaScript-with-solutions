@@ -158,6 +158,23 @@ console.log(g);
 const map = new Map();
 console.log(map); // Map(0) {size: 0}
 
+//friends adında bir obje oluşturduk
+const friends = new Map();
+
+//objemize yeni özellikler ekledik.
+friends.set('Fevzi', 'Uşak')
+friends.set('Sefa', 'Manisa')
+friends.set(3, 'Kırşehir')
+friends.set(true, 'Karaman')
+console.log(friends)
+//Burada istediğimiz tipte key verebiliyoruz
+// 0: {"Fevzi" => "Uşak"}
+// 1: {"Sefa" => "Manisa"}
+// 2: {3 => "Kırşehir"}
+// 3: {true => "Karaman"}
+
+
+
 //Bir diziden Map oluşturma
 const cities = [
     ['Kocaeli', 'İzmit'],
