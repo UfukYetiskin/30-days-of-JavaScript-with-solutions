@@ -1,4 +1,11 @@
-console.log("--- Template Listerals --- ")
+console.log("--- Template Listerals (şablon dizileri) --- ")
+
+/*
+Bir JavaScript ifadesini düz bir yazı yazar gibi tek bir satırda yazmamızı
+sağlayan string çeşidi olarak tanımlanabilir. Template literals, back tick 
+dediğimiz tırnak işaretleri içinde yazılmalıdır.
+
+*/
 
 // Interpolating string || enterpolasyon dizeleri
 
@@ -151,3 +158,6 @@ function myTag(strings,personName,personAge){
 let sentence = myTag`${person} is a ${age}`;
 console.log(sentence);
 // Alberto is a youngster
+
+
+

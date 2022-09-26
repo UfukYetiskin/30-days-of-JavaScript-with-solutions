@@ -2,7 +2,14 @@ console.log("******** Arrow Functions ********")
 
 /*
  Arrow Function, ES6 ile sunulan özelliklerden biridir. Arrow Function özelliğinin temel amacı JavaScript'te kullanılan fonksiyon tanımlama yöntemini kısaltmak ve prartik bir kullanım sağlamaktır.
-*/
+
+ Oklu fonksiyon ifadeleri, JavaScript'te fonksiyon oluşturmanın
+ yeni bir yönetimidir. En önemli ve sık kullanılan özelliklerden
+ bir tanesi implicit (üst kapalı) return özelliğidir. Dikakt edilmesi
+ gereken bir başka farklılık ise, oklu fonksiyon ifadeleri hoist edilmezler,
+yani bir değişkene atadığınız oklu fonksiyonları, function ifadesiyle oluşturduğunuz fonksiyonlar gibi, oluşturmadan önce çağıramazsınız.
+
+ */
 //Example of ES5 type arrow function
 
  const greeting = function(name){

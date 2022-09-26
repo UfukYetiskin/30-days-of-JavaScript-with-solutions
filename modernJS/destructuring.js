@@ -2,6 +2,11 @@ console.log("-- Destructuring --")
 //Destructuring (yıkıcı), dizilerdeki değerleri veya nesnelerden gelen özellikleri farklı değişkenlere açmayı mümkün kılan bir ifadedir.
 
 //Destructuring Objects
+//Objelerde destructring yaparken obje anahtarları ile değişkenin ismi aynı olmak zorundadır.
+
+//Spread operatörüyle oluşturulan kalanlar değeri, Rest element olarak adlandırılır. Bu eleman. her zaman objenin veya dizinin son elemanı olarak gelmek zorundadır. Örneğin şöyle bir kullanım geçerli değildir.
+
+
 const names = {
     first : "İris",
     last : "Yetişkin",
@@ -27,7 +32,23 @@ const {facebook :fb} = person.links.social.facebook;
 const { facebook:fb1 = "https://www.facebook.com"} = person.links.social;
 // we renamed the variable to *fb* and we also set a default value to it
 
+const {alberto, ...infos} = person
+console.log(infos);
+//{last : montalesi, links : {social : { facebook : "https:/"}}, website : "https://"}
+
+//React örneği
+
+//Normalde KullaniciYasGoster(props)yapabilirdik, ama props içerisinde isim ve yas özellikleri olduğunu biliyoruz.
+function KullaniciYasGoster({isim, yas}){
+    return `${isim} isimli kullanıcı ${yas} yaşındadır.`
+}
+
+
+
+
 //Destructuring Arrays
+//Dizilerde destructuring yaparken ise elemanların sırası önemlidir. İlk eleman, ilk girilen değişkene atanır.
+
 
 const iris = ["İris", "Yetişkin", "2"];
 const [name, surname, age] = iris

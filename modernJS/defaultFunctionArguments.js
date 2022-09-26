@@ -1,8 +1,14 @@
 console.log("---- Default Function Arguments ----- ")
 
 /*
+Bir fonksiyonun aldığı parametreler için varsayılan değerler 
+girilebilir. Eğer fonksiyon çağırıldığında bu değerler 
+girilmezse, varsayılan değerler hesaba katılır.
+
 ES6'dan önce, varsayılan değerleri işlev argümanlarına ayarlamak o kadar kolay değildi. 
 Bir örneğe bakalım:
+
+
 
 function getLocation(city,country,continent){
   if(typeof country === 'undefined'){
