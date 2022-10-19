@@ -89,3 +89,43 @@ dad = null;
 console.log(family);
 //WeakSet {{…}, {…}}
 
+//What is a Map?
+//Map anahtar ve değer ikilisini tutan ve değerlerin eklenme sırasını hatırlayan bir JavaScript nesnesidir. Normal bir nesneden farklı olarak anahtar için herhangi bir veri tipi kullanılabilir. String ile sınırlı değildir.
+
+//syntax
+const firstMap = new Map()
+
+//create map
+const cats = new Map();
+
+cats.set("Pars", 2)
+cats.set("Latte", 0.5);
+
+console.log(cats);
+//Map(2) {'Pars' => 2, 'Latte' => 0.5}
+
+//size of map
+console.log(cats.size)
+//2
+
+//loop for map
+cats.forEach((val, key) => console.log(key, val));
+//Pars 2
+//Latte 0.5
+
+//with for of
+for(const [key, val] of cats){
+    console.log(key, val)
+}
+//Pars 2
+//Latte 0.5
+
+
+//What is a WeakMap
+//WeakMap Map in .get,.set,.has ve .delete fonksiyonlarını destekler. Ancak anahtar değer olarak sadece object,function ve NaN gibi verileri kabul eder.
+
+let weakmap = new WeakMap()
+const obj = {};
+weakmap.set(obj, {});
+console.log(weakmap.get(obj))
+//{}
